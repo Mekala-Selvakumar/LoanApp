@@ -1,4 +1,4 @@
-package com.stackroute.model.service;
+package com.stackroute.service;
 
 import com.stackroute.model.Customer;
 import com.stackroute.model.LoanApplication;

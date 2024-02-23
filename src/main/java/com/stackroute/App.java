@@ -1,7 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.model.LoanApplication;
-import com.stackroute.model.service.LoanApprovalService;
+import com.stackroute.service.LoanApprovalService;
 import com.stackroute.model.Customer;
 
 
