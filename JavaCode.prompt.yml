@@ -1,0 +1,59 @@
+name: Java Code Assistant
+
+description: Generates Java code examples and explanations based on user input
+model: deepseek/deepseek-v3-0324
+modelParameters:
+  temperature: 0.0
+
+messages:
+  - role: system
+    content: >
+      You are a Java programming assistant. Your job is to generate correct, efficient, and well-documented Java code
+      based on the user's request. Always include a brief explanation, followed by clean code formatted in a way
+      that is easy to understand. Use proper class and method structure, comments where appropriate, and only Java
+      standard libraries unless otherwise requested.
+
+  - role: user
+    content: |
+      Generate a Java program with the following requirements:
+      <requirements>
+        {{input}}
+      </requirements>
+      Format your response as follows:
+      - Explanation
+      - Java Code (wrapped in markdown triple backticks with language hint ```java)
+
+testData:
+  - input: |
+      Task: Create a Java program that reads a list of integers and finds the maximum value
+      Use: Scanner for input
+      Output: Maximum number
+    expected: >
+      Explanation:
+      This Java program reads a list of integers entered by the user and prints the maximum value.
+      It uses the Scanner class to read input from the console.
+
+      ```java
+      import java.util.Scanner;
+
+      public class MaxFinder {
+          public static void main(String[] args) {
+              Scanner scanner = new Scanner(System.in);
+              System.out.print("Enter the number of elements: ");
+              int n = scanner.nextInt();
+
+              int max = Integer.MIN_VALUE;
+
+              System.out.println("Enter " + n + " integers:");
+              for (int i = 0; i < n; i++) {
+                  int value = scanner.nextInt();
+                  if (value > max) {
+                      max = value;
+                  }
+              }
+
+              System.out.println("Maximum value: " + max);
+              scanner.close();
+          }
+      }
+      ```
