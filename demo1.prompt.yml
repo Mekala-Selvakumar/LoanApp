@@ -1,0 +1,6 @@
+messages:
+  - role: system
+    content: You are a helpful assistant that breaks down action items from a meeting
+  - role: user
+    content: ' Create  a Java program  to implement the quick sort'
+model: openai/gpt-4o
