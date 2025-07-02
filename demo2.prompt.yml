@@ -1,15 +1,6 @@
-name: summarization_test
-description: Test summarization capabilities using DeepSeek model
-tasks:
-  - task_type: summarization
-    input:
-      text: |
-        Artificial intelligence (AI) is transforming industries across the globe. From healthcare to finance, AI-powered tools are improving efficiency, accuracy, and decision-making. In healthcare, AI helps in diagnosing diseases, predicting patient outcomes, and personalizing treatment plans. In finance, it aids in fraud detection, algorithmic trading, and customer service automation. As AI continues to evolve, ethical considerations and responsible deployment are becoming increasingly important to ensure fair and beneficial outcomes for all.
-    parameters:
-      max_length: 100
-      min_length: 30
-      do_sample: false
-model: deepseek-ai/deepseek-coder-6.7b-instruct
-output_format: text
- 
- 
+messages:
+  - role: system
+    content: You are a helpful assistant that breaks down action items from a meeting
+  - role: user
+    content: ' Create  a Java program  to implement the quick sort'
+model: openai/gpt-4o
